@@ -1,0 +1,707 @@
+/* Base page styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #10151d;
+    color: #f4f1e9;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+.eyebrow {
+    margin: 0 0 5px;
+    color: #98a6ae;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 0.16em;
+}
+
+.eyebrow span {
+    color: #f2bf5b;
+}
+
+/* Flexbox game header */
+.game-header {
+    background-color: #171f2a;
+    border-bottom: 1px solid #35404b;
+    padding: 14px 24px;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 22px;
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.game-logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    flex-shrink: 0;
+    color: #f6f1e6;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+}
+
+.game-logo b {
+    color: #f2bf5b;
+}
+
+.logo-icon {
+    display: inline-block;
+    color: #f2bf5b;
+    font-size: 22px;
+}
+
+.game-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.stat {
+    display: inline-block;
+    padding: 7px 10px;
+    border: 1px solid #35404b;
+    border-radius: 7px;
+    background-color: #202a36;
+    color: #c6ced1;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.stat span {
+    color: #f2bf5b;
+    font-weight: bold;
+}
+
+.stat:first-child span {
+    color: #ee8290;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.header-button {
+    display: inline-block;
+    padding: 8px 11px;
+    border: 1px solid #596674;
+    border-radius: 6px;
+    background-color: #263240;
+    color: #f4f1e9;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.header-button:hover {
+    border-color: #f2bf5b;
+    background-color: #344252;
+}
+
+.menu-button span {
+    margin-left: 5px;
+    color: #f2bf5b;
+}
+
+.page-content {
+    width: 94%;
+    max-width: 1320px;
+    margin: 24px auto 34px;
+}
+
+/* Flexbox game scene: actors and platforms stay in normal document flow. */
+.game-stage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 18px;
+    min-height: 370px;
+    overflow: hidden;
+    padding: 24px 30px 18px;
+    border: 1px solid #586c71;
+    border-radius: 14px;
+    background-color: #234653;
+    background-image: linear-gradient(180deg, #376878 0%, #5c9b91 55%, #a5b777 100%);
+    box-shadow: 0 12px 30px #0003;
+}
+
+.stage-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.stage-heading .eyebrow {
+    color: #e5e8cf;
+}
+
+.stage-heading h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(23px, 3vw, 34px);
+    letter-spacing: -0.04em;
+    text-shadow: 0 2px 4px #142b35aa;
+}
+
+.stage-hint {
+    margin: 5px 0 0;
+    color: #e5ecd9;
+    font-size: 11px;
+    text-align: right;
+}
+
+.scene-actors {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    gap: 24px;
+    min-height: 112px;
+    padding: 8px 10%;
+}
+
+.actor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    min-width: 75px;
+}
+
+.actor-emoji {
+    display: inline-block;
+    font-size: 40px;
+    line-height: 1;
+    filter: drop-shadow(0 6px 4px #17383b66);
+}
+
+.player-actor .actor-emoji {
+    font-size: 43px;
+}
+
+.actor-glow {
+    color: #fff0a9;
+    font-size: 14px;
+}
+
+.actor-label {
+    display: inline-block;
+    padding: 3px 7px;
+    border: 1px solid #ffffff66;
+    border-radius: 20px;
+    background-color: #173a43aa;
+    color: #ffffff;
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+.star-actor .actor-emoji {
+    color: #ffe486;
+    text-shadow: 0 0 16px #ffe486;
+}
+
+.platform-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    gap: 18px;
+    min-height: 68px;
+    padding: 0 3%;
+}
+
+.platform {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 1;
+    max-width: 230px;
+    height: 39px;
+    border: 2px solid #56664c;
+    border-radius: 9px 9px 3px 3px;
+    background-color: #455a42;
+    box-shadow: inset 0 6px 0 #839661;
+}
+
+.platform span {
+    display: inline-block;
+    margin-top: 13px;
+    color: #d7e0bf;
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 0.12em;
+}
+
+.platform-two {
+    height: 57px;
+    border-color: #766746;
+    background-color: #63583d;
+    box-shadow: inset 0 6px 0 #baa36a;
+}
+
+.platform-three {
+    height: 47px;
+    border-color: #4e6459;
+    background-color: #3d5b50;
+    box-shadow: inset 0 6px 0 #83a38a;
+}
+
+.stage-caption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    color: #e7efd9;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 0.17em;
+}
+
+.caption-dot {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #f2bf5b;
+}
+
+/* Flexbox gives each of the three game panels an equal share of the row. */
+.game-panels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.panel {
+    flex: 1;
+    min-width: 220px;
+    padding: 20px;
+    border: 1px solid #303c49;
+    border-radius: 12px;
+    background-color: #1a222d;
+    box-shadow: 0 8px 20px #0002;
+}
+
+.panel-heading {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-bottom: 17px;
+    padding-bottom: 13px;
+    border-bottom: 1px solid #303c49;
+}
+
+.panel-icon {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    border: 1px solid #66573b;
+    border-radius: 9px;
+    background-color: #332e25;
+    color: #f2bf5b;
+    font-size: 18px;
+    line-height: 32px;
+    text-align: center;
+}
+
+.panel-heading .eyebrow {
+    margin-bottom: 1px;
+    font-size: 8px;
+}
+
+.panel-heading h2 {
+    margin: 0;
+    color: #f5f1e8;
+    font-size: 17px;
+}
+
+.direction-pad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 3px 0 8px;
+}
+
+.control-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.control-row button {
+    width: 39px;
+    height: 35px;
+    border: 1px solid #536274;
+    border-radius: 7px;
+    background-color: #273444;
+    color: #f4f1e9;
+    font-size: 17px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.control-row button:hover {
+    transform: translateY(-2px);
+    background-color: #39495b;
+}
+
+.control-row .jump-button {
+    width: 104px;
+    height: 31px;
+    border-color: #9b783b;
+    background-color: #594626;
+    color: #ffe5a4;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+}
+
+.jump-button span {
+    margin-left: 7px;
+}
+
+.panel-note {
+    margin: 9px 0 0;
+    color: #8995a0;
+    font-size: 10px;
+    text-align: center;
+}
+
+/* Inventory cards use Flexbox wrapping to fit narrow panels. */
+.inventory-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.inventory-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 66px;
+    min-height: 81px;
+    padding: 8px;
+    border: 1px solid #3a4754;
+    border-radius: 9px;
+    background-color: #222d39;
+    color: #d9e0e1;
+    font-size: 10px;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.inventory-item:hover {
+    border-color: #b79252;
+    background-color: #2c3742;
+}
+
+.inventory-item span {
+    margin-bottom: 5px;
+    font-size: 21px;
+}
+
+.quest-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.quest-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 0;
+    border-bottom: 1px solid #303c49;
+    color: #d5dbdc;
+    font-size: 10px;
+}
+
+.quest-row:last-child {
+    border-bottom: 0;
+}
+
+.quest-row b {
+    flex-shrink: 0;
+    padding: 4px 7px;
+    border: 1px solid #4b5549;
+    border-radius: 20px;
+    background-color: #29332b;
+    color: #d8e5bb;
+    font-size: 9px;
+}
+
+.quest-mark {
+    display: inline-block;
+    width: 18px;
+    color: #f2bf5b;
+    font-style: normal;
+}
+
+.key-mark {
+    color: #d4aa62;
+}
+
+.monster-mark {
+    color: #d58386;
+}
+
+/* The Flexbox Lab demonstrates block, inline, inline-block, and flex. */
+.flexbox-lab {
+    margin-top: 24px;
+    padding: 20px;
+    border: 1px solid #303c49;
+    border-radius: 12px;
+    background-color: #171e27;
+}
+
+.lab-heading {
+    margin-bottom: 15px;
+}
+
+.lab-heading h2 {
+    margin: 0;
+    color: #f4f1e9;
+    font-size: 18px;
+}
+
+.lab-heading > p:last-child {
+    margin: 4px 0 0;
+    color: #98a3ab;
+    font-size: 10px;
+}
+
+.lab-examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.lab-example {
+    flex: 1 1 190px;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid #303c49;
+    border-radius: 8px;
+    background-color: #1d2732;
+}
+
+.lab-example h3 {
+    margin: 0 0 9px;
+    color: #e8c875;
+    font-size: 10px;
+}
+
+.block-demo span {
+    display: block;
+    margin: 3px 0;
+    padding: 3px 6px;
+    border-radius: 3px;
+    background-color: #344456;
+    color: #ecf0eb;
+    font-size: 9px;
+}
+
+.inline-demo span {
+    display: inline;
+    padding: 3px 5px;
+    background-color: #344456;
+    color: #ecf0eb;
+    font-size: 9px;
+}
+
+.inline-block-demo span {
+    display: inline-block;
+    margin-right: 4px;
+    padding: 7px;
+    border: 1px solid #596a7a;
+    border-radius: 4px;
+    background-color: #344456;
+    color: #ecf0eb;
+    font-size: 9px;
+}
+
+.flex-demo {
+    display: flex;
+    gap: 5px;
+}
+
+.flex-demo span {
+    flex: 1;
+    padding: 6px 3px;
+    border-radius: 4px;
+    background-color: #344456;
+    color: #ecf0eb;
+    font-size: 9px;
+    text-align: center;
+}
+
+.game-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    padding: 18px 3%;
+    border-top: 1px solid #303c49;
+    background-color: #171f2a;
+    color: #9ca7ad;
+    font-size: 10px;
+}
+
+.footer-brand {
+    color: #f1eee4;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+}
+
+.footer-brand span {
+    color: #f2bf5b;
+    font-size: 15px;
+}
+
+.game-footer p {
+    margin: 0;
+}
+
+.footer-assignment a {
+    color: #e9c56f;
+}
+
+.footer-assignment a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1020px) {
+    .header-inner {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .game-stats {
+        order: 3;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .game-header {
+        padding: 14px 16px;
+    }
+
+    .page-content {
+        width: 92%;
+        margin-top: 18px;
+    }
+
+    .game-stage {
+        min-height: 340px;
+        padding: 20px 18px 16px;
+    }
+
+    .game-panels {
+        flex-direction: column;
+    }
+
+    .panel {
+        min-width: 0;
+    }
+
+    .inventory-item {
+        flex: 1 1 90px;
+    }
+
+    .stage-hint {
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-logo {
+        font-size: 13px;
+    }
+
+    .game-stats {
+        gap: 6px;
+    }
+
+    .stat {
+        padding: 6px 7px;
+        font-size: 10px;
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .stage-heading {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .stage-hint {
+        max-width: none;
+        margin-top: 0;
+        text-align: left;
+    }
+
+    .scene-actors {
+        justify-content: space-between;
+        padding: 8px 9%;
+    }
+
+    .platform-row {
+        gap: 8px;
+        padding: 0;
+    }
+
+    .platform {
+        min-width: 0;
+    }
+
+    .panel {
+        padding: 17px;
+    }
+
+    .flexbox-lab {
+        padding: 16px;
+    }
+
+    .game-footer {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+}

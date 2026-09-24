@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Flexbox Quest, a CSS Flexbox mini game interface by Rehan.">
+    <title>Flexbox Quest — Mini Game UI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="game-header">
+        <div class="header-inner">
+            <a class="game-logo" href="index.html" aria-label="Flexbox Quest home">
+                <span class="logo-icon" aria-hidden="true">⚔</span>
+                <span>FLEXBOX <b>QUEST</b></span>
+            </a>
+
+            <div class="game-stats" aria-label="Game statistics">
+                <span class="stat"><span aria-hidden="true">♥</span> Lives: <b>3</b></span>
+                <span class="stat"><span aria-hidden="true">◈</span> Coins: <b>120</b></span>
+                <span class="stat"><span aria-hidden="true">LVL</span> <b>1</b></span>
+                <span class="stat"><span aria-hidden="true">★</span> Score: <b>1250</b></span>
+            </div>
+
+            <div class="header-actions">
+                <button class="header-button" type="button">Ⅱ Pause</button>
+                <a class="header-button menu-button" href="#quest">Menu <span aria-hidden="true">☰</span></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <section class="game-stage" id="home" aria-labelledby="stage-title">
+            <div class="stage-heading">
+                <div>
+                    <p class="eyebrow">WORLD 01 <span>·</span> THE EMERALD TRAIL</p>
+                    <h1 id="stage-title">Collect all the stars!</h1>
+                </div>
+                <p class="stage-hint">A tiny adventure, built with Flexbox.</p>
+            </div>
+
+            <div class="scene-actors" aria-label="The player and a star are exploring the level">
+                <div class="actor player-actor">
+                    <span class="actor-glow" aria-hidden="true">✦</span>
+                    <span class="actor-emoji" aria-hidden="true">🧙</span>
+                    <span class="actor-label">PLAYER 01</span>
+                </div>
+                <div class="actor star-actor">
+                    <span class="actor-emoji" aria-hidden="true">⭐</span>
+                    <span class="actor-label">GOLDEN STAR</span>
+                </div>
+            </div>
+
+            <div class="platform-row" aria-label="Three platforms in the game world">
+                <div class="platform platform-one"><span>01</span></div>
+                <div class="platform platform-two"><span>02</span></div>
+                <div class="platform platform-three"><span>03</span></div>
+            </div>
+            <p class="stage-caption"><span class="caption-dot"></span> THE TRAIL IS OPEN <span class="caption-dot"></span></p>
+        </section>
+
+        <section class="game-panels" aria-label="Game information panels">
+            <article class="panel controls-panel" id="controls">
+                <div class="panel-heading">
+                    <span class="panel-icon" aria-hidden="true">✥</span>
+                    <div><p class="eyebrow">PLAYER GUIDE</p><h2>Controls</h2></div>
+                </div>
+                <div class="direction-pad" aria-label="Direction buttons (visual demo)">
+                    <div class="control-row"><button type="button" aria-label="Move up">↑</button></div>
+                    <div class="control-row">
+                        <button type="button" aria-label="Move left">←</button>
+                        <button type="button" aria-label="Move down">↓</button>
+                        <button type="button" aria-label="Move right">→</button>
+                    </div>
+                    <div class="control-row jump-row"><button class="jump-button" type="button">JUMP <span aria-hidden="true">↗</span></button></div>
+                </div>
+                <p class="panel-note">Use the arrows to explore the trail.</p>
+            </article>
+
+            <article class="panel inventory-panel" id="inventory">
+                <div class="panel-heading">
+                    <span class="panel-icon" aria-hidden="true">▣</span>
+                    <div><p class="eyebrow">YOUR ITEMS</p><h2>Inventory</h2></div>
+                </div>
+                <div class="inventory-items">
+                    <div class="inventory-item"><span aria-hidden="true">⚔️</span><b>Sword</b></div>
+                    <div class="inventory-item"><span aria-hidden="true">🛡️</span><b>Shield</b></div>
+                    <div class="inventory-item"><span aria-hidden="true">🧪</span><b>Potion</b></div>
+                    <div class="inventory-item"><span aria-hidden="true">🔑</span><b>Key</b></div>
+                </div>
+                <p class="panel-note">Four trusty items for the journey.</p>
+            </article>
+
+            <article class="panel quest-panel" id="quest">
+                <div class="panel-heading">
+                    <span class="panel-icon" aria-hidden="true">✧</span>
+                    <div><p class="eyebrow">NEXT OBJECTIVES</p><h2>Quest</h2></div>
+                </div>
+                <ul class="quest-list">
+                    <li class="quest-row"><span><i class="quest-mark star-mark" aria-hidden="true">★</i>Collect 3 Stars</span><b>1 / 3</b></li>
+                    <li class="quest-row"><span><i class="quest-mark key-mark" aria-hidden="true">⚿</i>Find the Golden Key</span><b>0 / 1</b></li>
+                    <li class="quest-row"><span><i class="quest-mark monster-mark" aria-hidden="true">◆</i>Defeat the Monster</span><b>0 / 1</b></li>
+                </ul>
+                <p class="panel-note">Every great quest starts somewhere.</p>
+            </article>
+        </section>
+
+        <section class="flexbox-lab" aria-labelledby="lab-title">
+            <div class="lab-heading">
+                <p class="eyebrow">BUILT INTO THE ADVENTURE</p>
+                <h2 id="lab-title">Flexbox Lab</h2>
+                <p>A quick look at the display styles used in this assignment.</p>
+            </div>
+            <div class="lab-examples">
+                <div class="lab-example">
+                    <h3>Block</h3>
+                    <div class="block-demo"><span>Box 1</span><span>Box 2</span></div>
+                </div>
+                <div class="lab-example">
+                    <h3>Inline</h3>
+                    <div class="inline-demo"><span>Item 1</span> <span>Item 2</span></div>
+                </div>
+                <div class="lab-example">
+                    <h3>Inline block</h3>
+                    <div class="inline-block-demo"><span>Card 1</span><span>Card 2</span></div>
+                </div>
+                <div class="lab-example">
+                    <h3>Flex</h3>
+                    <div class="flex-demo"><span>Flex 1</span><span>Flex 2</span><span>Flex 3</span></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="game-footer">
+        <a class="footer-brand" href="index.html"><span aria-hidden="true">⚔</span> FLEXBOX QUEST</a>
+        <p>Built with HTML + CSS + Flexbox</p>
+        <p class="footer-assignment">Flexbox Lab Assignment · <a href="../../index.html">Back to Rehan’s portfolio</a></p>
+    </footer>
+</body>
+</html>
+
