@@ -1,60 +1,1126 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portfolio of Rehan Arsh Asif Shaikh, a first-year student learning Java, HTML, and CSS.">
-  <title>Rehan Arsh Asif Shaikh — Web Developer in Progress</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal Developer Portfolio of Rehan Arsh Asif Shaikh - first-year student learning Java, HTML, and CSS & Aspiring Developer showcasing projects, technical skills, and learning journey.">
+  <meta name="author" content="Rehan Arsh Asif Shaikh">
+  <title>Rehan Shaikh | Portfolio - CS Student & Aspiring Developer</title>
+
+  <!-- Google Fonts: Inter (Sans-Serif) and JetBrains Mono (Monospace) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="tailwind.css">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS is precompiled locally; no browser JavaScript is required. -->
+
+  <!-- Tailwind Configuration for Custom Theme & Extensions -->
+<!-- Minimal Custom CSS (Styles that extend Tailwind utility capabilities) -->
+  <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="selection:bg-lime-300 selection:text-stone-950">
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <nav class="nav wrap" aria-label="Main navigation">
-      <a class="brand" href="#home"><span class="brand-mark">R</span><span>rehan<span class="accent">.dev</span></span></a>
-      <div class="nav-links hidden min-[621px]:flex">
-        <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+
+<body class="bg-[#070b14] text-slate-100 font-sans antialiased selection:bg-cyan-500/20 selection:text-cyan-300 min-h-screen flex flex-col relative overflow-x-hidden">
+
+  <!-- ================================================================= -->
+  <!-- BACKGROUND AMBIENT GLOW EFFECTS (Tailwind Absolute Positioning)   -->
+  <!-- ================================================================= -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+    <!-- Top-left glowing cyan orb -->
+    <div class="absolute -top-40 -left-40 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse-glow"></div>
+    <!-- Top-right royal blue glow -->
+    <div class="absolute top-1/4 -right-40 w-[30rem] h-[30rem] bg-blue-600/10 rounded-full blur-3xl animate-pulse-glow" style="animation-delay: 2s;"></div>
+    <!-- Bottom-left subtle glow -->
+    <div class="absolute bottom-20 left-1/3 w-80 h-80 bg-sky-500/5 rounded-full blur-3xl"></div>
+    <!-- Subtle grid texture pattern -->
+    <div class="absolute inset-0 bg-grid-pattern opacity-40"></div>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- 1. STICKY NAVBAR                                                  -->
+  <!-- Uses: backdrop-blur-md, sticky, top-0, z-50, flex, justify-between -->
+  <!-- Mobile Menu: Pure CSS toggle using checkbox hack with zero JS!   -->
+  <!-- ================================================================= -->
+  <header class="sticky top-0 z-50 w-full backdrop-blur-md bg-[#070b14]/85 border-b border-slate-800/80 transition-all duration-300">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between" aria-label="Main Navigation">
+
+      <!-- Brand Logo / Name -->
+      <a href="#hero" class="group flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-lg p-1" id="nav-logo" aria-label="Home page">
+        <span class="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-mono font-bold text-sm group-hover:bg-cyan-500/20 group-hover:border-cyan-400 transition-all duration-300">
+          &lt;/&gt;
+        </span>
+        <span class="text-base sm:text-lg font-bold tracking-tight text-white group-hover:text-cyan-400 transition-colors duration-200">
+          Rehan Shaikh<span class="text-cyan-400">.</span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Links (Tailwind Flexbox & Hover States) -->
+      <div class="hidden md:flex items-center gap-1 lg:gap-2">
+        <a href="#about" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 rounded-md transition-colors duration-200 hover:bg-slate-800/50">About</a>
+        <a href="#skills" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 rounded-md transition-colors duration-200 hover:bg-slate-800/50">Skills</a>
+        <a href="#projects" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 rounded-md transition-colors duration-200 hover:bg-slate-800/50">Projects</a>
+        <a href="#education" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 rounded-md transition-colors duration-200 hover:bg-slate-800/50">Education</a>
+        <a href="#contact" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 rounded-md transition-colors duration-200 hover:bg-slate-800/50">Contact</a>
       </div>
-      <a class="nav-cta focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime-300" href="#projects">Explore my work <span aria-hidden="true">↗</span></a>
+
+      <!-- Highlighted "Let's Connect" CTA Button (Desktop) -->
+      <div class="hidden md:flex items-center">
+        <a href="#contact" class="relative group inline-flex items-center gap-2 px-4 py-2 text-xs lg:text-sm font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 to-sky-400 hover:from-cyan-300 hover:to-sky-300 rounded-full shadow-sm hover:shadow-cyan-400/25 transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-[#070b14]" id="nav-cta-desktop">
+          <span>Let's Connect</span>
+          <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mobile Navigation Hamburger (Pure CSS Toggle using Hidden Checkbox) -->
+      <div class="md:hidden flex items-center">
+        <input type="checkbox" id="menu-toggle" class="peer hidden" aria-label="Toggle navigation menu">
+        <label for="menu-toggle" class="p-2 text-slate-400 hover:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 cursor-pointer select-none">
+          <svg class="w-6 h-6 peer-checked:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </label>
+
+        <!-- Mobile Dropdown Menu Container (Triggered by CSS :checked state) -->
+        <div class="peer-checked:flex hidden flex-col absolute top-16 left-0 right-0 bg-[#0b1120] border-b border-slate-800/90 px-6 py-5 shadow-2xl backdrop-blur-xl animate-fade-in z-50">
+          <div class="flex flex-col space-y-3 font-medium">
+            <a href="#about" class="text-slate-300 hover:text-cyan-400 py-2 border-b border-slate-800/50 transition-colors">About</a>
+            <a href="#skills" class="text-slate-300 hover:text-cyan-400 py-2 border-b border-slate-800/50 transition-colors">Skills</a>
+            <a href="#projects" class="text-slate-300 hover:text-cyan-400 py-2 border-b border-slate-800/50 transition-colors">Projects</a>
+            <a href="#education" class="text-slate-300 hover:text-cyan-400 py-2 border-b border-slate-800/50 transition-colors">Education</a>
+            <a href="#contact" class="text-slate-300 hover:text-cyan-400 py-2 transition-colors">Contact</a>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800">
+            <a href="#contact" class="block w-full text-center px-4 py-2.5 text-sm font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 to-sky-400 rounded-lg shadow hover:opacity-95 transition-opacity">
+              Let's Connect →
+            </a>
+          </div>
+        </div>
+      </div>
+
     </nav>
   </header>
-  <main id="main">
-    <section class="hero wrap" id="home">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot"></span> FIRST-YEAR STUDENT · LEARNING THE WEB</p>
-        <h1>Hi, I’m Rehan.<br>I make the web<br><span class="outline">a little more</span><br><span class="accent">interesting.</span></h1>
-        <p class="intro">I’m learning to build thoughtful, responsive websites with HTML and CSS. This is where I share what I’m learning and the projects I make along the way.</p>
-        <div class="hero-actions"><a class="button button-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-stone-950" href="#projects">See my projects <span aria-hidden="true">↓</span></a><a class="button button-quiet focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime-300" href="#contact">Get in touch <span aria-hidden="true">↗</span></a></div>
-        <p class="hero-note"><span class="mono">CURRENTLY LEARNING</span> &nbsp; Java · HTML · CSS</p>
+
+  <!-- ================================================================= -->
+  <!-- MAIN CONTENT AREA                                                 -->
+  <!-- ================================================================= -->
+  <main class="flex-grow z-10">
+
+    <!-- =============================================================== -->
+    <!-- 2. HERO SECTION                                                 -->
+    <!-- Demonstrates: Flexbox, Grid, Entrance Animations, Typography    -->
+    <!-- =============================================================== -->
+    <section id="hero" class="relative pt-12 pb-20 md:pt-20 md:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto" aria-labelledby="hero-heading">
+
+      <!-- Responsive Two-Column Layout (Mobile: 1 column, Laptop/Desktop: 12-col Grid) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+
+        <!-- Left Column: Hero Text Content (lg:col-span-7) -->
+        <div class="lg:col-span-7 flex flex-col items-start">
+
+          <!-- Status Badge with Pulsing Green Indicator -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium bg-cyan-950/60 text-cyan-300 border border-cyan-800/60 backdrop-blur-sm mb-6 shadow-sm shadow-cyan-950">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span>First-year Student • Builders Day 2026</span>
+          </div>
+
+          <!-- Main Hero Greeting (h1) -->
+          <h1 id="hero-heading" class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight mb-4">
+            Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500">Rehan Shaikh</span> <span class="inline-block animate-wave origin-[70%_70%]">👋</span>
+          </h1>
+
+          <!-- Role Subtitle -->
+          <p class="text-lg sm:text-xl font-semibold text-cyan-400/90 font-mono mb-6 flex items-center gap-2">
+            <span class="text-slate-500">&gt;</span> Computer Science Student &amp; Aspiring Developer
+          </p>
+
+          <!-- Short Introduction -->
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mb-8">
+            I'm passionate about technology, web development and building things that solve real problems. I enjoy learning by creating projects and experimenting with new ideas.
+          </p>
+
+          <!-- Two Call-To-Action (CTA) Buttons (Tailwind Flexbox & Transitions) -->
+          <div class="flex flex-wrap items-center gap-4 w-full sm:w-auto">
+            <!-- Primary CTA -->
+            <a href="#projects" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 px-6 py-3.5 text-sm font-bold text-slate-950 bg-gradient-to-r from-cyan-400 via-cyan-300 to-sky-400 hover:from-cyan-300 hover:to-sky-300 rounded-xl shadow-lg shadow-cyan-500/20 hover:shadow-cyan-400/30 transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-cyan-400" id="hero-cta-projects">
+              <span>View My Projects</span>
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+              </svg>
+            </a>
+
+            <!-- Secondary CTA -->
+            <a href="#contact" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 px-6 py-3.5 text-sm font-semibold text-slate-200 bg-slate-900/80 hover:bg-slate-800/90 border border-slate-700/70 hover:border-cyan-500/50 rounded-xl shadow-md hover:text-white transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-cyan-400" id="hero-cta-contact">
+              <span>Let's Connect</span>
+              <svg class="w-4 h-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Quick Micro-Badges -->
+          <div class="mt-10 pt-6 border-t border-slate-800/70 w-full flex flex-wrap items-center gap-6 text-xs text-slate-400 font-mono">
+            <div class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+              <span>Semantic HTML5</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+              <span>Tailwind CSS</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+              <span>C++ &amp; Python</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+              <span>Mobile-First</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Interactive Developer Terminal Card (lg:col-span-5) -->
+        <!-- Demonstrates: Floating animation, Bento styling, Dark glassmorphism, Monospace typography -->
+        <div class="lg:col-span-5 relative">
+
+          <!-- Decorative Glow Backdrop behind card -->
+          <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500/20 to-blue-600/20 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+
+          <!-- The Terminal Card -->
+          <div class="relative rounded-2xl bg-[#0d1322]/95 border border-slate-800/90 shadow-2xl backdrop-blur-xl overflow-hidden animate-float-card transform hover:border-cyan-500/40 transition-all duration-300">
+
+            <!-- Terminal Header Bar with macOS Window Dots -->
+            <div class="flex items-center justify-between px-4 py-3 bg-[#090d18] border-b border-slate-800/80">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-rose-500/90 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500/90 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500/90 inline-block"></span>
+              </div>
+              <div class="text-xs font-mono text-slate-400 flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+                <span>dev-environment ~ zsh</span>
+              </div>
+              <div class="text-[10px] font-mono text-slate-500">utf-8</div>
+            </div>
+
+            <!-- Terminal Body Content -->
+            <div class="p-5 font-mono text-xs sm:text-sm space-y-4 text-slate-300 leading-relaxed">
+
+              <!-- Command 1: whoami -->
+              <div>
+                <div class="flex items-center gap-2 text-cyan-400">
+                  <span class="text-emerald-400 font-bold">$</span>
+                  <span class="font-semibold">whoami</span>
+                </div>
+                <div class="text-slate-100 pl-4 pt-1 font-semibold flex items-center gap-1">
+                  <span>Rehan Arsh Asif Shaikh</span>
+                  <span class="text-xs text-slate-500">(Student Developer)</span>
+                </div>
+              </div>
+
+              <!-- Command 2: role -->
+              <div>
+                <div class="flex items-center gap-2 text-cyan-400">
+                  <span class="text-emerald-400 font-bold">$</span>
+                  <span class="font-semibold">role</span>
+                </div>
+                <div class="text-slate-300 pl-4 pt-1">
+                  Computer Science Student
+                </div>
+              </div>
+
+              <!-- Command 3: currently_learning -->
+              <div>
+                <div class="flex items-center gap-2 text-cyan-400">
+                  <span class="text-emerald-400 font-bold">$</span>
+                  <span class="font-semibold">currently_learning</span>
+                </div>
+                <div class="text-slate-300 pl-4 pt-1">
+                  Web Development &amp; Problem Solving
+                </div>
+              </div>
+
+              <!-- Command 4: building -->
+              <div>
+                <div class="flex items-center gap-2 text-cyan-400">
+                  <span class="text-emerald-400 font-bold">$</span>
+                  <span class="font-semibold">building</span>
+                </div>
+                <div class="text-cyan-300 pl-4 pt-1 flex items-center gap-2">
+                  <span>Projects &amp; Experiments</span>
+                  <span class="text-xs bg-cyan-950 text-cyan-400 px-2 py-0.5 rounded border border-cyan-800/40">Active</span>
+                </div>
+              </div>
+
+              <!-- Active Typing Prompt -->
+              <div class="pt-2 border-t border-slate-800/60 flex items-center gap-2 text-slate-400">
+                <span class="text-emerald-400 font-bold">$</span>
+                <span class="text-slate-300">echo "Ready to build!"</span>
+                <span class="w-2 h-4 bg-cyan-400 inline-block animate-cursor-blink"></span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
       </div>
-      <div class="hero-art" aria-label="Decorative code-inspired graphic">
-        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
-        <div class="code-card"><div class="code-top"><span></span><span></span><span></span><small>about-me.html</small></div><div class="code-body"><p><i>&lt;student&gt;</i></p><p class="indent"><b>name</b> = <em>"Rehan"</em></p><p class="indent"><b>focus</b> = <em>"building"</em></p><p class="indent"><b>status</b> = <em>"learning…"</em></p><p><i>&lt;/student&gt;</i></p><div class="cursor-line"><span></span></div></div></div>
-        <div class="art-tag tag-top">&lt; curious by default /&gt;</div><div class="art-tag tag-bottom">BUILD · LEARN · REPEAT <span>✳</span></div>
-      </div>
-      <a class="scroll-cue mono" href="#about"><span class="scroll-line"></span> SCROLL TO EXPLORE</a>
+
     </section>
-    <section class="py-28 section about-section" id="about"><div class="mx-auto w-full max-w-[1160px] px-7 max-sm:px-[18px] wrap section-grid"><p class="section-index mono">01 / ABOUT</p><div><h2>Learning by<br><span class="muted">making things.</span></h2><div class="about-text"><p>I’m Rehan Arsh Asif Shaikh, a first-year student at the start of my web development journey. I like taking an idea, breaking it into small pieces, and turning it into a page someone can actually use.</p><p>Right now, I’m learning Java, HTML, and CSS, with a focus on building clear, responsive web pages. This portfolio will grow as I do.</p></div><div class="fact-row"><div><span class="fact-number">01</span><span>Curiosity first</span></div><div><span class="fact-number">02</span><span>Learn by building</span></div><div><span class="fact-number">03</span><span>Always improving</span></div></div></div></div></section>
-    <section class="py-28 section skills-section" id="skills"><div class="mx-auto w-full max-w-[1160px] px-7 max-sm:px-[18px] wrap"><div class="section-heading"><p class="section-index mono">02 / TOOLKIT</p><h2>Things I’m <span class="muted">working with.</span></h2><p class="section-lead">A growing toolkit. I’m keeping the focus on understanding the basics well.</p></div><div class="skills-grid grid grid-cols-2 lg:grid-cols-4 gap-3"><article class="skill-card skill-feature"><span class="skill-num mono">01</span><div class="skill-icon">&lt;/&gt;</div><h3>HTML</h3><p>Building clear page structure with semantic elements, headings, links, and sections.</p><span class="skill-level">LEARNING THE FOUNDATIONS</span></article><article class="skill-card"><span class="skill-num mono">02</span><div class="skill-icon">✳</div><h3>CSS</h3><p>Styling layouts, type, color, and small interactions.</p><span class="skill-level">LEARNING THE FOUNDATIONS</span></article><article class="skill-card"><span class="skill-num mono">03</span><div class="skill-icon">▦</div><h3>Java</h3><p>Learning the fundamentals of programming and problem-solving with Java.</p><span class="skill-level">CURRENTLY LEARNING</span></article><article class="skill-card"><span class="skill-num mono">04</span><div class="skill-icon">↗</div><h3>Tailwind CSS</h3><p>Using utility classes for responsive layouts and focus styles in this portfolio.</p><span class="skill-level">USED IN THIS SITE</span></article></div></div></section>
-    <section class="py-28 section projects-section" id="projects"><div class="mx-auto w-full max-w-[1160px] px-7 max-sm:px-[18px] wrap"><div class="section-heading project-heading"><div><p class="section-index mono">03 / SELECTED WORK</p><h2>Made while <span class="muted">learning.</span></h2></div><p class="section-lead">Two small project demos based on the titles you shared. Both are made with HTML and CSS and open as standalone pages.</p></div><div class="project-grid grid grid-cols-1 min-[621px]:grid-cols-2 lg:grid-cols-2 gap-4">
-      <article class="project-card"><div class="project-visual visual-one"><span class="visual-label mono">01 — HTML + CSS LAB</span><div class="mini-window"><div class="mini-nav"></div><div class="mini-hero"><i></i><i></i><b></b></div><div class="mini-blocks"><i></i><i></i><i></i></div></div><span class="visual-sticker">STUDENT<br>PORTAL</span></div><div class="project-info"><div class="project-title"><h3>Student Portal</h3><span>01</span></div><p>A beginner HTML and CSS portal with a student profile, weekly timetable, skills list, and course registration form.</p><div class="project-bottom"><div class="chips"><span>HTML</span><span>CSS</span><span>Tables</span></div><a class="link-placeholder" href="projects/student-portal.html">OPEN PROJECT ↗</a></div></div></article>
-      <article class="project-card"><div class="project-visual visual-two"><span class="visual-label mono">02 — FLEXBOX LAB ASSIGNMENT</span><div class="device desktop"><i></i><i></i><i></i><b></b></div><div class="device phone"><i></i><b></b></div><span class="visual-sticker sticker-blue">FLEX<br>QUEST</span></div><div class="project-info"><div class="project-title"><h3>Flexbox Quest</h3><span>02</span></div><p>A responsive mini game dashboard that demonstrates Flexbox in the header, game scene, controls, inventory, and quest panels.</p><div class="project-bottom"><div class="chips"><span>HTML</span><span>CSS</span><span>Flexbox</span></div><a class="link-placeholder" href="projects/flexbox-quest/index.html">OPEN PROJECT ↗</a></div></div></article>
-      
-    </div><p class="project-reminder"><span>↳</span> These demos were created from the project names you shared. Update the sample details so they match your own finished projects.</p></div></section>
-    <section class="py-28 section journey-section"><div class="mx-auto w-full max-w-[1160px] px-7 max-sm:px-[18px] wrap section-grid"><p class="section-index mono">04 / THE JOURNEY</p><div class="journey-content"><h2>Early days.<br><span class="muted">Good things ahead.</span></h2><div class="journey-card"><span class="journey-year mono">NOW · FIRST YEAR</span><div><h3>First-year student</h3><p>Studying Java, HTML, and CSS while building a foundation in web development.</p></div><span class="journey-mark">✳</span></div><p class="journey-edit">Add your school name or previous experience here only if you want it included.</p></div></div></section>
-    <section class="contact-section" id="contact"><div class="mx-auto w-full max-w-[1160px] px-7 max-sm:px-[18px] wrap contact-wrap"><p class="section-index mono">05 / SAY HELLO</p><div class="contact-main"><p class="mono contact-kicker">HAVE AN IDEA OR FEEDBACK?</p><h2>Let’s make<br><span>something cool.</span></h2><p>Get in touch by email or find me on GitHub.</p><div class="contact-links"><a href="mailto:rehanshaikh.00607@gmail.com" class="button button-primary">Email me <span>↗</span></a><a href="https://github.com/rehanshaikh00607-cloud" class="button button-quiet" target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a><a href="https://www.linkedin.com/in/rehan-shaikh-172a08431/" class="button button-quiet" target="_blank" rel="noopener noreferrer">LinkedIn <span>↗</span></a></div></div><div class="contact-stamp">OPEN<br>TO<br>LEARNING</div></div></section>
+
+    <!-- =============================================================== -->
+    <!-- 3. ABOUT ME SECTION                                             -->
+    <!-- Demonstrates: Semantic Sectioning, Bento Cards, Tailwind Grid   -->
+    <!-- =============================================================== -->
+    <section id="about" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800/60" aria-labelledby="about-heading">
+
+      <!-- Section Header -->
+      <div class="flex flex-col items-start mb-12">
+        <span class="text-xs font-mono font-semibold uppercase tracking-wider text-cyan-400 bg-cyan-950/40 px-3 py-1 rounded-full border border-cyan-800/40 mb-3">
+          // 01. About Me
+        </span>
+        <h2 id="about-heading" class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Turning Curiosity into Working Code
+        </h2>
+        <div class="h-1 w-20 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mt-3"></div>
+      </div>
+
+      <!-- About Main Narrative -->
+      <div class="rounded-2xl bg-[#0f172a]/60 border border-slate-800/80 p-6 sm:p-8 backdrop-blur-sm mb-10 shadow-lg">
+        <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-4xl">
+          I'm a computer science student who enjoys learning by building. I'm particularly interested in web development, programming and technology. Instead of only studying concepts, I like turning what I learn into practical projects.
+        </p>
+      </div>
+
+      <!-- 3 Bento Information Cards (Tailwind Grid: 1 col on mobile, 3 cols on tablet/desktop) -->
+      <!-- Tailwind Classes: grid grid-cols-1 md:grid-cols-3 gap-6 -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Card 1: Learning -->
+        <div class="group relative rounded-2xl bg-[#0d1322]/80 border border-slate-800/80 p-6 sm:p-7 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-cyan-500/5">
+          <!-- Top Icon & Badge -->
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-5 group-hover:scale-110 group-hover:bg-cyan-500/20 transition-all duration-300">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+            Learning
+          </h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Strengthening fundamentals in computer science, data logic in C++ and Python, and mastering modern semantic HTML5 and CSS architectures.
+          </p>
+          <div class="mt-4 pt-4 border-t border-slate-800/60 flex items-center text-xs font-mono text-cyan-400/90">
+            <span>&bull; CS Fundamentals &amp; Web Standards</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Building -->
+        <div class="group relative rounded-2xl bg-[#0d1322]/80 border border-slate-800/80 p-6 sm:p-7 hover:border-sky-500/50 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-sky-500/5">
+          <!-- Top Icon & Badge -->
+          <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 mb-5 group-hover:scale-110 group-hover:bg-sky-500/20 transition-all duration-300">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-sky-400 transition-colors">
+            Building
+          </h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Transforming abstract designs and assignment concepts into real, responsive websites with clean Tailwind CSS utility classes and modern layouts.
+          </p>
+          <div class="mt-4 pt-4 border-t border-slate-800/60 flex items-center text-xs font-mono text-sky-400/90">
+            <span>&bull; Hands-on Projects &amp; UI Prototypes</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Exploring -->
+        <div class="group relative rounded-2xl bg-[#0d1322]/80 border border-slate-800/80 p-6 sm:p-7 hover:border-blue-500/50 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-blue-500/5">
+          <!-- Top Icon & Badge -->
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-5 group-hover:scale-110 group-hover:bg-blue-500/20 transition-all duration-300">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+            Exploring
+          </h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Investigating modern developer tools, Git workflows, UI design ergonomics, and preparing for future full-stack technologies like React and Node.js.
+          </p>
+          <div class="mt-4 pt-4 border-t border-slate-800/60 flex items-center text-xs font-mono text-blue-400/90">
+            <span>&bull; Modern Dev Tools &amp; Next Steps</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- 4. SKILLS SECTION (Bento Style Grid)                            -->
+    <!-- Demonstrates: Bento Grid, Categorized Cards, NO fake % bars!     -->
+    <!-- =============================================================== -->
+    <section id="skills" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800/60" aria-labelledby="skills-heading">
+
+      <!-- Section Header -->
+      <div class="flex flex-col items-start mb-12">
+        <span class="text-xs font-mono font-semibold uppercase tracking-wider text-cyan-400 bg-cyan-950/40 px-3 py-1 rounded-full border border-cyan-800/40 mb-3">
+          // 02. Technical Toolkit
+        </span>
+        <h2 id="skills-heading" class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Skills &amp; Technologies
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-2xl">
+          A structured look at my current programming foundations, frontend toolkit, developer utilities, and learning roadmap.
+        </p>
+        <div class="h-1 w-20 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mt-3"></div>
+      </div>
+
+      <!-- Bento-style Categorized Grid: 2 columns on tablet/desktop -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+        <!-- Category 1: Frontend Development (Bento Card) -->
+        <div class="rounded-2xl bg-[#0d1322]/80 border border-slate-800/80 p-6 sm:p-7 backdrop-blur-sm">
+          <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-800/70">
+            <span class="p-2 rounded-lg bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </span>
+            <div>
+              <h3 class="text-lg font-bold text-white">Frontend Development</h3>
+              <p class="text-xs text-slate-400 font-mono">Structure, Styling &amp; Layout Systems</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <!-- Skill Pill: HTML -->
+            <div class="group p-4 rounded-xl bg-[#080d18] border border-slate-800/90 hover:border-cyan-500/40 hover:-translate-y-1 transition-all duration-300">
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-bold text-slate-100 text-sm group-hover:text-cyan-400 transition-colors">HTML5</span>
+                <span class="text-[10px] font-mono text-cyan-400 bg-cyan-950/80 px-2 py-0.5 rounded border border-cyan-800/40">Core</span>
+              </div>
+              <p class="text-xs text-slate-400 leading-normal">
+                Semantic structure, accessibility tags, SEO hierarchy &amp; clean markup.
+              </p>
+            </div>
+
+            <!-- Skill Pill: CSS -->
+            <div class="group p-4 rounded-xl bg-[#080d18] border border-slate-800/90 hover:border-cyan-500/40 hover:-translate-y-1 transition-all duration-300">
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-bold text-slate-100 text-sm group-hover:text-cyan-400 transition-colors">CSS3</span>
+                <span class="text-[10px] font-mono text-cyan-400 bg-cyan-950/80 px-2 py-0.5 rounded border border-cyan-800/40">Core</span>
+              </div>
+              <p class="text-xs text-slate-400 leading-normal">
+                Flexbox, CSS Grid, Box Model, transforms, and responsive design.
+              </p>
+            </div>
+
+            <!-- Skill Pill: Tailwind CSS -->
+            <div class="group p-4 rounded-xl bg-[#080d18] border border-slate-800/90 hover:border-cyan-500/40 hover:-translate-y-1 transition-all duration-300 sm:col-span-1">
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-bold text-slate-100 text-sm group-hover:text-cyan-400 transition-colors">Tailwind CSS</span>
+                <span class="text-[10px] font-mono text-cyan-400 bg-cyan-950/80 px-2 py-0.5 rounded border border-cyan-800/40">Primary</span>
+              </div>
+              <p class="text-xs text-slate-400 leading-normal">
+                Utility-first styling, breakpoint utilities, transitions &amp; dark UI.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: Programming Languages (Bento Card) -->
+        <div class="rounded-2xl bg-[#0d1322]/80 border border-slate-800/80 p-6 sm:p-7 backdrop-blur-sm">
+          <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-800/70">
+            <span class="p-2 rounded-lg bg-sky-500/10 text-sky-400 border border-sky-500/20">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+              </svg>
+            </span>
+            <div>
+              <h3 class="text-lg font-bold text-white">Programming Foundations</h3>
+              <p class="text-xs text-slate-400 font-mono">Logic, Problem Solving &amp; Syntax</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <!-- Skill Pill: C / C++ -->
+            <div class="group p-4 rounded-xl bg-[#080d18] border border-slate-800/90 hover:border-sky-500/40 hover:-translate-y-1 transition-all duration-300">
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-bold text-slate-100 text-sm group-hover:text-sky-400 transition-colors">C / C++</span>
+                <span class="text-[10px] font-mono text-sky-400 bg-sky-950/80 px-2 py-0.5 rounded border border-sky-800/40">Academic</span>
+              </div>
+              <p class="text-xs text-slate-400 leading-normal">
+                Control structures, procedural programming, memory concepts &amp; algorithms.
+              </p>
+            </div>
+
+            <!-- Skill Pill: Python -->
+            <div class="group p-4 rounded-xl bg-[#080d18] border border-slate-800/90 hover:border-sky-500/40 hover:-translate-y-1 transition-all duration-300">
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-bold text-slate-100 text-sm group-hover:text-sky-400 transition-colors">Python</span>
+                <span class="text-[10px] font-mono text-sky-400 bg-sky-950/80 px-2 py-0.5 rounded border border-sky-800/40">Core</span>
+              </div>
+              <p class="text-xs text-slate-400 leading-normal">
+                Scripting, data handling, clean syntax &amp; computational problem solving.
+              </p>
+            </div>
+
+            <!-- Skill Pill: JavaScript -->
+            <div class="group p-4 rounded-xl bg-[#080d18] border border-slate-800/90 hover:border-sky-500/40 hover:-translate-y-1 transition-all duration-300">
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-bold text-slate-100 text-sm group-hover:text-sky-400 transition-colors">JavaScript</span>
+                <span class="text-[10px] font-mono text-sky-400 bg-sky-950/80 px-2 py-0.5 rounded border border-sky-800/40">Foundations</span>
+              </div>
+              <p class="text-xs text-slate-400 leading-normal">
+                DOM manipulation, event listeners, basic logic &amp; interactive scripts.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3: Developer Tools & Workflow (Bento Card) -->
+        <div class="rounded-2xl bg-[#0d1322]/80 border border-slate-800/80 p-6 sm:p-7 backdrop-blur-sm">
+          <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-800/70">
+            <span class="p-2 rounded-lg bg-blue-500/10 text-blue-400 border border-blue-500/20">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </span>
+            <div>
+              <h3 class="text-lg font-bold text-white">Developer Tools</h3>
+              <p class="text-xs text-slate-400 font-mono">Environment &amp; Version Control</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <!-- Skill Pill: Git -->
+            <div class="group p-4 rounded-xl bg-[#080d18] border border-slate-800/90 hover:border-blue-500/40 hover:-translate-y-1 transition-all duration-300">
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-bold text-slate-100 text-sm group-hover:text-blue-400 transition-colors">Git</span>
+                <span class="text-[10px] font-mono text-blue-400 bg-blue-950/80 px-2 py-0.5 rounded border border-blue-800/40">VCS</span>
+              </div>
+              <p class="text-xs text-slate-400 leading-normal">
+                Version control, branching, committing changes &amp; repository history.
+              </p>
+            </div>
+
+            <!-- Skill Pill: GitHub -->
+            <div class="group p-4 rounded-xl bg-[#080d18] border border-slate-800/90 hover:border-blue-500/40 hover:-translate-y-1 transition-all duration-300">
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-bold text-slate-100 text-sm group-hover:text-blue-400 transition-colors">GitHub</span>
+                <span class="text-[10px] font-mono text-blue-400 bg-blue-950/80 px-2 py-0.5 rounded border border-blue-800/40">Cloud</span>
+              </div>
+              <p class="text-xs text-slate-400 leading-normal">
+                Project hosting, repository management &amp; code portfolio sharing.
+              </p>
+            </div>
+
+            <!-- Skill Pill: VS Code -->
+            <div class="group p-4 rounded-xl bg-[#080d18] border border-slate-800/90 hover:border-blue-500/40 hover:-translate-y-1 transition-all duration-300">
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-bold text-slate-100 text-sm group-hover:text-blue-400 transition-colors">VS Code</span>
+                <span class="text-[10px] font-mono text-blue-400 bg-blue-950/80 px-2 py-0.5 rounded border border-blue-800/40">Editor</span>
+              </div>
+              <p class="text-xs text-slate-400 leading-normal">
+                Extensions, Live Server, debugging setup &amp; efficient keybindings.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 4: Currently Learning Roadmap (Bento Card) -->
+        <div class="rounded-2xl bg-gradient-to-br from-[#0d1322]/90 to-cyan-950/20 border border-cyan-900/40 p-6 sm:p-7 backdrop-blur-sm relative overflow-hidden">
+          <div class="flex items-center gap-3 mb-6 pb-4 border-b border-cyan-900/30">
+            <span class="p-2 rounded-lg bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 animate-pulse">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </span>
+            <div>
+              <h3 class="text-lg font-bold text-white">Currently Learning</h3>
+              <p class="text-xs text-cyan-400 font-mono">Future Roadmap &amp; Next Horizons</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <!-- Learning Pill: Advanced JS -->
+            <div class="group p-4 rounded-xl bg-[#080d18]/80 border border-slate-800/90 hover:border-cyan-400/40 hover:-translate-y-1 transition-all duration-300">
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-bold text-slate-100 text-sm group-hover:text-cyan-300 transition-colors">JavaScript</span>
+                <span class="text-[10px] font-mono text-cyan-300 bg-cyan-950 px-2 py-0.5 rounded border border-cyan-800/50">ES6+</span>
+              </div>
+              <p class="text-xs text-slate-400 leading-normal">
+                Async/await, API data fetching, promises &amp; modular code design.
+              </p>
+            </div>
+
+            <!-- Learning Pill: React -->
+            <div class="group p-4 rounded-xl bg-[#080d18]/80 border border-slate-800/90 hover:border-cyan-400/40 hover:-translate-y-1 transition-all duration-300">
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-bold text-slate-100 text-sm group-hover:text-cyan-300 transition-colors">React</span>
+                <span class="text-[10px] font-mono text-cyan-300 bg-cyan-950 px-2 py-0.5 rounded border border-cyan-800/50">UI Lib</span>
+              </div>
+              <p class="text-xs text-slate-400 leading-normal">
+                Components, props, useState lifecycle &amp; single page app fundamentals.
+              </p>
+            </div>
+
+            <!-- Learning Pill: Node.js -->
+            <div class="group p-4 rounded-xl bg-[#080d18]/80 border border-slate-800/90 hover:border-cyan-400/40 hover:-translate-y-1 transition-all duration-300">
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-bold text-slate-100 text-sm group-hover:text-cyan-300 transition-colors">Node.js</span>
+                <span class="text-[10px] font-mono text-cyan-300 bg-cyan-950 px-2 py-0.5 rounded border border-cyan-800/50">Runtime</span>
+              </div>
+              <p class="text-xs text-slate-400 leading-normal">
+                Backend JavaScript runtimes, simple HTTP servers &amp; npm package ecosystem.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- 5. PROJECTS SECTION                                             -->
+    <!-- Demonstrates: Tailwind Responsive Grid: cols-1 md:cols-2 lg:cols-3 -->
+    <!-- Hover Effects: hover:-translate-y-2 hover:scale-[1.02]          -->
+    <!-- =============================================================== -->
+    <section id="projects" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800/60" aria-labelledby="projects-heading">
+
+      <!-- Section Header -->
+      <div class="flex flex-col items-start mb-12">
+        <span class="text-xs font-mono font-semibold uppercase tracking-wider text-cyan-400 bg-cyan-950/40 px-3 py-1 rounded-full border border-cyan-800/40 mb-3">
+          // 03. Featured Work
+        </span>
+        <h2 id="projects-heading" class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Projects &amp; Experiments
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-2xl">
+          Real web projects demonstrating semantic HTML, modern Tailwind CSS layouts, responsive design, and CSS animations.
+        </p>
+        <div class="h-1 w-20 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mt-3"></div>
+      </div>
+
+      <!-- Responsive Grid: Mobile -> 1 col, Tablet -> 2 cols, Desktop -> 3 cols -->
+      <!-- Tailwind Classes: grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+
+        <!-- ============================================================= -->
+        <!-- PROJECT 1: Responsive Portfolio                              -->
+        <!-- ============================================================= -->
+        <article class="group flex flex-col justify-between rounded-2xl bg-[#0d1322]/90 border border-slate-800/90 overflow-hidden hover:border-cyan-500/50 hover:shadow-2xl hover:shadow-cyan-500/10 hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 ease-out">
+
+          <!-- Visual Header / Mockup Representation -->
+          <div class="relative h-48 bg-gradient-to-br from-slate-900 via-[#0a1120] to-cyan-950/40 p-5 flex flex-col justify-between border-b border-slate-800/80 overflow-hidden">
+            <!-- Background Decorative Grid Lines -->
+            <div class="absolute inset-0 bg-grid-pattern opacity-30"></div>
+
+            <!-- Top bar with browser mockup buttons -->
+            <div class="flex items-center justify-between z-10">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+              </div>
+              <span class="text-[11px] font-mono text-cyan-400/90 bg-[#070b14]/80 px-2 py-0.5 rounded border border-slate-800">
+                portfolio.dev
+              </span>
+            </div>
+
+            <!-- Stylized Project Card Preview Center Graphic -->
+            <div class="relative z-10 flex flex-col items-center justify-center text-center py-2">
+              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-400/30 flex items-center justify-center text-cyan-400 mb-2 group-hover:scale-110 group-hover:bg-cyan-500/20 transition-all duration-300">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                </svg>
+              </div>
+              <span class="text-xs font-mono text-slate-300">Developer Portfolio v1.0</span>
+            </div>
+
+            <!-- Bottom Badge -->
+            <div class="flex justify-between items-center text-[10px] font-mono text-slate-400 z-10">
+              <span>Builders Day Project</span>
+              <span class="text-emerald-400 flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"></span> Live Ready
+              </span>
+            </div>
+          </div>
+
+          <!-- Card Content Body -->
+          <div class="p-6 flex-grow flex flex-col">
+            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+              Responsive Portfolio
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+              A responsive personal portfolio designed to showcase my skills, projects and learning journey.
+            </p>
+
+            <!-- Technology Tags (Pills) -->
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-2.5 py-1 text-xs font-mono font-medium rounded-md bg-slate-800/80 text-cyan-300 border border-slate-700/60">HTML</span>
+              <span class="px-2.5 py-1 text-xs font-mono font-medium rounded-md bg-slate-800/80 text-cyan-300 border border-slate-700/60">Tailwind CSS</span>
+              <span class="px-2.5 py-1 text-xs font-mono font-medium rounded-md bg-slate-800/80 text-cyan-300 border border-slate-700/60">Responsive Design</span>
+            </div>
+
+            <!-- Action Buttons: Live Demo & GitHub (Flexbox) -->
+            <div class="flex items-center gap-3 pt-4 border-t border-slate-800/70">
+              <a href="#" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-semibold text-slate-950 bg-cyan-400 hover:bg-cyan-300 rounded-lg shadow transition-colors" title="View Live Demo">
+                <span>Live Demo</span>
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+              </a>
+              <a href="#" class="inline-flex items-center justify-center p-2.5 text-xs font-medium text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-750 border border-slate-700/60 rounded-lg transition-colors" title="View GitHub Code" aria-label="GitHub Repository">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ============================================================= -->
+        <!-- PROJECT 2: Responsive Website                                 -->
+        <!-- ============================================================= -->
+        <article class="group flex flex-col justify-between rounded-2xl bg-[#0d1322]/90 border border-slate-800/90 overflow-hidden hover:border-sky-500/50 hover:shadow-2xl hover:shadow-sky-500/10 hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 ease-out">
+
+          <!-- Visual Header / Mockup Representation -->
+          <div class="relative h-48 bg-gradient-to-br from-slate-900 via-[#0a1120] to-sky-950/40 p-5 flex flex-col justify-between border-b border-slate-800/80 overflow-hidden">
+            <!-- Background Grid Pattern -->
+            <div class="absolute inset-0 bg-grid-pattern opacity-30"></div>
+
+            <!-- Top bar -->
+            <div class="flex items-center justify-between z-10">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+              </div>
+              <span class="text-[11px] font-mono text-sky-400/90 bg-[#070b14]/80 px-2 py-0.5 rounded border border-slate-800">
+                flex-grid.layout
+              </span>
+            </div>
+
+            <!-- Stylized Project Card Preview Center Graphic -->
+            <div class="relative z-10 flex flex-col items-center justify-center text-center py-2">
+              <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-400/30 flex items-center justify-center text-sky-400 mb-2 group-hover:scale-110 group-hover:bg-sky-500/20 transition-all duration-300">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+                </svg>
+              </div>
+              <span class="text-xs font-mono text-slate-300">Grid &amp; Flexbox Architecture</span>
+            </div>
+
+            <!-- Bottom Badge -->
+            <div class="flex justify-between items-center text-[10px] font-mono text-slate-400 z-10">
+              <span>Layout Mastery</span>
+              <span class="text-sky-400 font-mono">Mobile-First</span>
+            </div>
+          </div>
+
+          <!-- Card Content Body -->
+          <div class="p-6 flex-grow flex flex-col">
+            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-sky-400 transition-colors">
+              Responsive Website
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+              A responsive website demonstrating Flexbox, Grid, spacing, typography and mobile-first design.
+            </p>
+
+            <!-- Technology Tags (Pills) -->
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-2.5 py-1 text-xs font-mono font-medium rounded-md bg-slate-800/80 text-sky-300 border border-slate-700/60">HTML</span>
+              <span class="px-2.5 py-1 text-xs font-mono font-medium rounded-md bg-slate-800/80 text-sky-300 border border-slate-700/60">Tailwind CSS</span>
+              <span class="px-2.5 py-1 text-xs font-mono font-medium rounded-md bg-slate-800/80 text-sky-300 border border-slate-700/60">Flexbox</span>
+              <span class="px-2.5 py-1 text-xs font-mono font-medium rounded-md bg-slate-800/80 text-sky-300 border border-slate-700/60">Grid</span>
+            </div>
+
+            <!-- Action Buttons: Live Demo & GitHub (Flexbox) -->
+            <div class="flex items-center gap-3 pt-4 border-t border-slate-800/70">
+              <a href="#" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-semibold text-slate-950 bg-sky-400 hover:bg-sky-300 rounded-lg shadow transition-colors" title="View Live Demo">
+                <span>Live Demo</span>
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+              </a>
+              <a href="#" class="inline-flex items-center justify-center p-2.5 text-xs font-medium text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-750 border border-slate-700/60 rounded-lg transition-colors" title="View GitHub Code" aria-label="GitHub Repository">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ============================================================= -->
+        <!-- PROJECT 3: CSS Animation Project                              -->
+        <!-- ============================================================= -->
+        <article class="group flex flex-col justify-between rounded-2xl bg-[#0d1322]/90 border border-slate-800/90 overflow-hidden hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 ease-out">
+
+          <!-- Visual Header / Mockup Representation -->
+          <div class="relative h-48 bg-gradient-to-br from-slate-900 via-[#0a1120] to-blue-950/40 p-5 flex flex-col justify-between border-b border-slate-800/80 overflow-hidden">
+            <!-- Background Grid Pattern -->
+            <div class="absolute inset-0 bg-grid-pattern opacity-30"></div>
+
+            <!-- Top bar -->
+            <div class="flex items-center justify-between z-10">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+              </div>
+              <span class="text-[11px] font-mono text-blue-400/90 bg-[#070b14]/80 px-2 py-0.5 rounded border border-slate-800">
+                animations.css
+              </span>
+            </div>
+
+            <!-- Stylized Project Card Preview Center Graphic -->
+            <div class="relative z-10 flex flex-col items-center justify-center text-center py-2">
+              <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-400/30 flex items-center justify-center text-blue-400 mb-2 group-hover:scale-110 group-hover:bg-blue-500/20 group-hover:rotate-12 transition-all duration-300">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <span class="text-xs font-mono text-slate-300">Transforms &amp; Keyframes Lab</span>
+            </div>
+
+            <!-- Bottom Badge -->
+            <div class="flex justify-between items-center text-[10px] font-mono text-slate-400 z-10">
+              <span>Motion Experiments</span>
+              <span class="text-blue-400 font-mono">60 FPS</span>
+            </div>
+          </div>
+
+          <!-- Card Content Body -->
+          <div class="p-6 flex-grow flex flex-col">
+            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+              CSS Animation Project
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+              A creative interface exploring transitions, transforms, hover effects and CSS animations.
+            </p>
+
+            <!-- Technology Tags (Pills) -->
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-2.5 py-1 text-xs font-mono font-medium rounded-md bg-slate-800/80 text-blue-300 border border-slate-700/60">HTML</span>
+              <span class="px-2.5 py-1 text-xs font-mono font-medium rounded-md bg-slate-800/80 text-blue-300 border border-slate-700/60">CSS</span>
+              <span class="px-2.5 py-1 text-xs font-mono font-medium rounded-md bg-slate-800/80 text-blue-300 border border-slate-700/60">Tailwind CSS</span>
+              <span class="px-2.5 py-1 text-xs font-mono font-medium rounded-md bg-slate-800/80 text-blue-300 border border-slate-700/60">Animations</span>
+            </div>
+
+            <!-- Action Buttons: Live Demo & GitHub (Flexbox) -->
+            <div class="flex items-center gap-3 pt-4 border-t border-slate-800/70">
+              <a href="#" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-semibold text-slate-950 bg-blue-400 hover:bg-blue-300 rounded-lg shadow transition-colors" title="View Live Demo">
+                <span>Live Demo</span>
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+              </a>
+              <a href="#" class="inline-flex items-center justify-center p-2.5 text-xs font-medium text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-750 border border-slate-700/60 rounded-lg transition-colors" title="View GitHub Code" aria-label="GitHub Repository">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- 6. EDUCATION / LEARNING JOURNEY                                 -->
+    <!-- Demonstrates: Timeline Layout, Realistic High School Milestones -->
+    <!-- =============================================================== -->
+    <section id="education" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800/60" aria-labelledby="education-heading">
+
+      <!-- Section Header -->
+      <div class="flex flex-col items-start mb-12">
+        <span class="text-xs font-mono font-semibold uppercase tracking-wider text-cyan-400 bg-cyan-950/40 px-3 py-1 rounded-full border border-cyan-800/40 mb-3">
+          // 04. Academic Roadmap
+        </span>
+        <h2 id="education-heading" class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Learning Journey
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-2xl">
+          Computer Science Student &mdash; Currently learning programming, web development and software development concepts.
+        </p>
+        <div class="h-1 w-20 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mt-3"></div>
+      </div>
+
+      <!-- Timeline Container with Continuous Connecting Line -->
+      <div class="relative pl-6 sm:pl-8 border-l-2 border-slate-800 space-y-10 ml-2 sm:ml-4 max-w-4xl">
+
+        <!-- Timeline Item 1: First-year Student -->
+        <div class="relative group">
+          <!-- Glowing Node Marker -->
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-cyan-400 ring-4 ring-[#070b14] ring-offset-2 ring-offset-cyan-950 group-hover:scale-125 transition-transform duration-300"></div>
+
+          <div class="rounded-2xl bg-[#0d1322]/80 border border-slate-800/90 p-6 backdrop-blur-sm group-hover:border-cyan-500/40 transition-all duration-300">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">
+                First-year student
+              </h3>
+              <span class="text-xs font-mono text-cyan-400 bg-cyan-950/80 px-2.5 py-1 rounded-full border border-cyan-800/50">
+                2025 &ndash; Present
+              </span>
+            </div>
+            <p class="text-sm font-semibold text-slate-300 mb-2">
+              [High School / Institution Name Placeholder]
+            </p>
+            <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+              Studying foundational computer science principles including computational thinking, programming paradigms (C++ / Python), logic gates, algorithmic problem solving, and standard data representations.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2: Self-Directed Web Development Foundations -->
+        <div class="relative group">
+          <!-- Glowing Node Marker -->
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-sky-400 ring-4 ring-[#070b14] ring-offset-2 ring-offset-sky-950 group-hover:scale-125 transition-transform duration-300"></div>
+
+          <div class="rounded-2xl bg-[#0d1322]/80 border border-slate-800/90 p-6 backdrop-blur-sm group-hover:border-sky-500/40 transition-all duration-300">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors">
+                Frontend Architecture &amp; Modern CSS
+              </h3>
+              <span class="text-xs font-mono text-sky-400 bg-sky-950/80 px-2.5 py-1 rounded-full border border-sky-800/50">
+                2025 &ndash; 2026
+              </span>
+            </div>
+            <p class="text-sm font-semibold text-slate-300 mb-2">
+              Self-Directed &amp; Builders Day Curriculum
+            </p>
+            <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+              Mastered semantic HTML5 document structures, CSS Box Model mechanics, Flexbox alignment, CSS Grid templates, and utility-first styling with Tailwind CSS to construct fully responsive multi-device interfaces.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 3: Programming Logic & Problem Solving Practice -->
+        <div class="relative group">
+          <!-- Glowing Node Marker -->
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-blue-400 ring-4 ring-[#070b14] ring-offset-2 ring-offset-blue-950 group-hover:scale-125 transition-transform duration-300"></div>
+
+          <div class="rounded-2xl bg-[#0d1322]/80 border border-slate-800/90 p-6 backdrop-blur-sm group-hover:border-blue-500/40 transition-all duration-300">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">
+                Algorithms, Git &amp; Developer Tooling
+              </h3>
+              <span class="text-xs font-mono text-blue-400 bg-blue-950/80 px-2.5 py-1 rounded-full border border-blue-800/50">
+                Practical Exercises
+              </span>
+            </div>
+            <p class="text-sm font-semibold text-slate-300 mb-2">
+              Hands-on Lab Experiments
+            </p>
+            <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+              Built command-line tools and algorithm practice scripts in Python and C++, while adopting Git version control, GitHub repository management, and professional VS Code workflows.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- 7. CONTACT SECTION                                              -->
+    <!-- Demonstrates: Frontend Contact Form, Grid Layout, Focus States  -->
+    <!-- =============================================================== -->
+    <section id="contact" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800/60" aria-labelledby="contact-heading">
+
+      <!-- Section Header -->
+      <div class="flex flex-col items-start mb-12">
+        <span class="text-xs font-mono font-semibold uppercase tracking-wider text-cyan-400 bg-cyan-950/40 px-3 py-1 rounded-full border border-cyan-800/40 mb-3">
+          // 05. Get In Touch
+        </span>
+        <h2 id="contact-heading" class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Let's build something together.
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-2xl">
+          Have an idea, project or simply want to connect? Feel free to reach out.
+        </p>
+        <div class="h-1 w-20 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mt-3"></div>
+      </div>
+
+      <!-- Contact Section Two-Column Layout (Info Cards + Frontend Form) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+        <!-- Left Column: Direct Contact Info & Socials (lg:col-span-5) -->
+        <div class="lg:col-span-5 space-y-4">
+
+          <!-- Email Card -->
+          <a href="mailto:rehanshaikh.00607@gmail.com" class="group block p-5 rounded-2xl bg-[#0d1322]/80 border border-slate-800/90 hover:border-cyan-500/50 hover:bg-[#0f172a] transition-all duration-300">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 group-hover:scale-110 group-hover:bg-cyan-500/20 transition-all duration-300">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <div class="overflow-hidden">
+                <span class="text-xs font-mono text-slate-400 block">Email Address</span>
+                <span class="text-sm sm:text-base font-semibold text-slate-200 group-hover:text-cyan-400 transition-colors truncate block">
+                  rehanshaikh.00607@gmail.com
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <!-- GitHub Card -->
+          <a href="https://github.com/rehanshaikh00607-cloud" target="_blank" rel="noopener noreferrer" class="group block p-5 rounded-2xl bg-[#0d1322]/80 border border-slate-800/90 hover:border-cyan-500/50 hover:bg-[#0f172a] transition-all duration-300">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 group-hover:scale-110 group-hover:bg-cyan-500/20 transition-all duration-300">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div class="overflow-hidden">
+                <span class="text-xs font-mono text-slate-400 block">GitHub Profile</span>
+                <span class="text-sm sm:text-base font-semibold text-slate-200 group-hover:text-cyan-400 transition-colors truncate block">
+                  github.com/rehanshaikh00607-cloud
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <!-- LinkedIn Card -->
+          <a href="https://www.linkedin.com/in/rehan-shaikh-172a08431/" target="_blank" rel="noopener noreferrer" class="group block p-5 rounded-2xl bg-[#0d1322]/80 border border-slate-800/90 hover:border-cyan-500/50 hover:bg-[#0f172a] transition-all duration-300">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 group-hover:scale-110 group-hover:bg-cyan-500/20 transition-all duration-300">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </div>
+              <div class="overflow-hidden">
+                <span class="text-xs font-mono text-slate-400 block">LinkedIn Profile</span>
+                <span class="text-sm sm:text-base font-semibold text-slate-200 group-hover:text-cyan-400 transition-colors truncate block">
+                  linkedin.com/in/rehan-shaikh-172a08431/
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Quick Tip Box -->
+          <div class="p-4 rounded-xl bg-cyan-950/30 border border-cyan-800/40 text-xs text-slate-300">
+            <span class="text-cyan-400 font-semibold font-mono">⚡ Quick Note:</span> You can reach me by email or connect with me on GitHub and LinkedIn.
+          </div>
+
+        </div>
+
+        <!-- Right Column: Frontend Contact Form (lg:col-span-7) -->
+        <!-- Demonstrates: Tailwind Form Inputs, Box Model, Focus Rings, Accessible Labels -->
+        <div class="lg:col-span-7 rounded-2xl bg-[#0d1322]/90 border border-slate-800/90 p-6 sm:p-8 backdrop-blur-sm shadow-xl">
+          <form action="mailto:rehanshaikh.00607@gmail.com" method="post" enctype="text/plain" class="space-y-5" aria-label="Contact form">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <!-- Name Input -->
+              <div>
+                <label for="contact-name" class="block text-xs font-mono font-medium text-slate-300 mb-2">
+                  Your Name <span class="text-cyan-400">*</span>
+                </label>
+                <input type="text" id="contact-name" name="name" required placeholder="Jane Doe" class="w-full px-4 py-3 rounded-xl bg-[#080d18] border border-slate-700/80 text-slate-100 placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all">
+              </div>
+
+              <!-- Email Input -->
+              <div>
+                <label for="contact-email" class="block text-xs font-mono font-medium text-slate-300 mb-2">
+                  Your Email <span class="text-cyan-400">*</span>
+                </label>
+                <input type="email" id="contact-email" name="email" required placeholder="jane@example.com" class="w-full px-4 py-3 rounded-xl bg-[#080d18] border border-slate-700/80 text-slate-100 placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all">
+              </div>
+            </div>
+
+            <!-- Subject Input -->
+            <div>
+              <label for="contact-subject" class="block text-xs font-mono font-medium text-slate-300 mb-2">
+                Subject
+              </label>
+              <input type="text" id="contact-subject" name="subject" placeholder="Project Collaboration / Question" class="w-full px-4 py-3 rounded-xl bg-[#080d18] border border-slate-700/80 text-slate-100 placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all">
+            </div>
+
+            <!-- Message Textarea -->
+            <div>
+              <label for="contact-message" class="block text-xs font-mono font-medium text-slate-300 mb-2">
+                Message <span class="text-cyan-400">*</span>
+              </label>
+              <textarea id="contact-message" name="message" rows="4" required placeholder="Hi Rehan, I loved your portfolio project..." class="w-full px-4 py-3 rounded-xl bg-[#080d18] border border-slate-700/80 text-slate-100 placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all resize-y"></textarea>
+            </div>
+
+            <!-- Submit Button (Tailwind Gradient, Hover & Active States) -->
+            <div>
+              <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 text-sm font-bold text-slate-950 bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-400 hover:from-cyan-300 hover:to-blue-300 rounded-xl shadow-lg shadow-cyan-500/20 hover:shadow-cyan-400/30 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-cyan-400">
+                <span>Send Message</span>
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                </svg>
+              </button>
+              <span class="block sm:inline-block sm:ml-4 text-xs text-slate-500 mt-2 sm:mt-0 font-mono">
+                Opens your email app to send this message
+              </span>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+
+    </section>
+
   </main>
-  <footer class="footer"><div class="mx-auto w-full max-w-[1160px] px-7 max-sm:px-[18px] wrap footer-inner"><a class="brand" href="#home"><span class="brand-mark">R</span><span>rehan<span class="accent">.dev</span></span></a><p>Made with curiosity &nbsp;✳&nbsp; HTML + CSS</p><a href="#home" class="back-top mono">BACK TO TOP ↑</a><small>© 2026 Rehan Arsh Asif Shaikh · Learning in public.</small></div></footer>
+
+  <!-- ================================================================= -->
+  <!-- 8. FOOTER                                                         -->
+  <!-- Minimalist, Accessible, Responsive, Back to Top link              -->
+  <!-- ================================================================= -->
+  <footer class="bg-[#050810] border-t border-slate-800/80 py-10 px-4 sm:px-6 lg:px-8 z-10">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+
+      <!-- Brand & Copyright -->
+      <div class="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
+        <span class="text-sm font-bold text-white tracking-tight">
+          &lt;Rehan Shaikh/&gt;
+        </span>
+        <span class="hidden sm:inline text-slate-600">&bull;</span>
+        <p class="text-xs text-slate-400 font-mono">
+          &copy; 2026 Rehan Arsh Asif Shaikh. Built with HTML + Tailwind CSS
+        </p>
+      </div>
+
+      <!-- Quick Social / Contact Links -->
+      <div class="flex items-center gap-6 text-xs text-slate-400 font-mono">
+        <a href="https://github.com/rehanshaikh00607-cloud" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors">GitHub</a>
+        <span class="text-slate-700">|</span>
+        <a href="https://www.linkedin.com/in/rehan-shaikh-172a08431/" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors">LinkedIn</a>
+        <span class="text-slate-700">|</span>
+        <a href="mailto:rehanshaikh.00607@gmail.com" class="hover:text-cyan-400 transition-colors">Email</a>
+      </div>
+
+      <!-- Back to Top Button -->
+      <div>
+        <a href="#hero" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 text-xs font-mono text-slate-300 hover:text-cyan-400 transition-colors" title="Back to top" aria-label="Back to top">
+          <span>Top</span>
+          <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
 </body>
 </html>
-
-
-
-
-
-
 
